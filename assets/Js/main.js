@@ -3,13 +3,14 @@ Ricreiamo un feed social aggiungendo al layout di base fornito, il nostro script
 ## milestone  1
 - Creiamo il nostro array di oggetti che rappresentano ciascun post.
 Ogni post dovrà avere le informazioni necessarie per stampare la relativa card:
-id del post, numero progressivo da 1 a n
-nome autore,
-foto autore,
-data in formato americano (mm-gg-yyyy),
-testo del post,
+- id del post, 
+- numero progressivo da 1 a n
+- nome autore,
+- foto autore,
+- data in formato americano (mm-gg-yyyy),
+- testo del post,
 immagine (non tutti i post devono avere una immagine),
-numero di likes.
+- numero di likes.
 Non è necessario creare date casuali Per le immagini va bene utilizzare qualsiasi servizio di placeholder ad es. Unsplash (https://unsplash.it/300/300?image=<id>)
 ## milestone  2 
 - Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i post del nostro feed.
@@ -138,3 +139,13 @@ function generatePosts(propic, name, created, content, media, id, likes){
             return markup;
 }
 
+function generateDefaultProfilepic (userName){
+    const name = userName.split(" ");
+    let firstName = name[0];
+    let lastName = name[1];
+    const capitalizedfirstName = firstName.charAt(0)
+    const capitalizedlastName = lastName.charAt(0)
+    let initials = `<div class="profile-pic">${capitalizedfirstName} ${capitalizedlastName}</div>`
+    console.log(initials)
+    return initials; 
+}
